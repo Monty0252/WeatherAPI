@@ -23,6 +23,10 @@ def get_weather():
 
         city_name.config(text=city.upper())
         temp_text.config(text=f"{temperature}°F")
+        if temperature < 30:
+            temp_text.config(fg="#0000FF")
+        else:
+            temp_text.config(fg = "#FF3030")
         desc_text.config(text=desc.capitalize())
         wind_text.config(text=f"{wind} mph")
         humidity_text.config(text=f"{humidity}%")
@@ -74,7 +78,7 @@ city_name = Label(Win, font=("arial", 20, "bold"))
 city_name.place(x=40, y=100)
 
 # Temperature Box
-temp_text = Label(font=("arial", 70, "bold"), fg="#ee666d")
+temp_text = Label(font=("arial", 70, "bold"), fg="#FF3030")
 temp_text.place(x=500, y=150)
 
 # Weather Description box
